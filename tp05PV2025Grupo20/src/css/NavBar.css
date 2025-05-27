@@ -1,0 +1,74 @@
+/* Contenedor principal de la barra de navegación */
+.navbar {
+  display: flex; /* Elementos en una sola fila */
+  justify-content: space-between; /* Espacio entre los elementos (izquierda y derecha) */
+  align-items: center; /* Centrado vertical */
+  background-color: #23279b; /* Color de fondo oscuro */
+  padding: 0.8rem 2rem; /* Espaciado interno (vertical y horizontal) */
+  position: sticky; /* La barra se mantiene visible en la parte superior al hacer scroll */
+  top: 0; /* Fijada al borde superior */
+  z-index: 1000; /* Asegura que se superponga a otros elementos */
+  box-shadow: 0 2px 5px rgba(250, 249, 249, 0.1); /* Sombra sutil para efecto de elevación */
+}
+/* Contenedor de la marca o logo */
+.navbar-brand {
+  font-size: 1.5rem; /* Tamaño de fuente grande */
+  font-weight: bold; /* Fuente en negrita */
+}
+/* Enlace del logo/marca */
+.navbar-logo {
+  color: #e9ecec; 
+  text-decoration: none; 
+  transition: color 0.3s ease; 
+}
+/* Lista de enlaces de navegación */
+.navbar-links {
+  list-style: none; /* Quita los puntos de la lista */
+  display: flex; /* Muestra los enlaces en fila */
+  gap: 1.5rem; /* Espacio entre los enlaces */
+  margin: 0; /* Quita el margen por defecto */
+  padding: 0; 
+}
+/* Estilo individual de cada enlace */
+.nav-link {
+  color: #ffffff; 
+  text-decoration: none; 
+  font-size: 1rem; 
+  transition: color 0.3s ease, border-bottom 0.3s ease; 
+  padding-bottom: 2px; 
+  border-bottom: 2px solid transparent; 
+}
+
+/* Efecto al pasar el mouse sobre un enlace */
+.nav-link:hover {
+  color: #00d5ff; /* Cambia el color del texto */
+  border-bottom: 2px solid #00eeff; /* Muestra un subrayado con el mismo color */
+}
+/* Diseño adaptable para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Cambia a disposición vertical */
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+  }
+  .navbar-links {
+    flex-direction: column; /* Enlaces en columna */
+    width: 100%; /* Ocupan todo el ancho */
+    margin-top: 0.5rem; /* Espacio superior */
+  }
+  .nav-link {
+    padding: 0.5rem 0; /* Espaciado vertical para los enlaces */
+  }
+}
+/* Imagen del logo */
+.logo-image {
+  width: 100px; /* Ajusta el tamaño según lo necesites */
+  height: 32px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+/* Alinea logo y texto horizontalmente */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+}
