@@ -1,19 +1,16 @@
 import { Link } from 'react-router-dom';
+import{useEffect, useState} from 'react';
 
 export default function ListaAlumnos() {
   // Ejemplo de datos de alumnos (puedes reemplazarlo por datos reales o props)
-  const alumnos = [
-    {
-      lu: "APU00999",
-      nombre: "María Eugenia",
-      apellido: "Diaz",
-      curso: "Tercero",
-      email: "mariadiaz@mail.com",
-      domicilio: "Av. Congreso 125",
-      telefono: "3884895999"
-    }
-    // Puedes agregar más alumnos aquí
-  ];
+  const [alumnos,setAlumnos] =useState([]);
+
+  useEffect(()=>{
+const data =JSON.parse(localStorage.getItem('alumnos'))||[];
+setAlumnos(data);
+  }, []);
+
+
 
   return (
     <div>

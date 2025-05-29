@@ -17,7 +17,7 @@ export default function NavBar() {
           <Link to="/alumnos" className="nav-link">Alumnos</Link>
         </li>
         <li>
-          <Link to="/nuevo-alumno" className="nav-link">Nuevo Alumno</Link>
+          <Link to="/alumnos/nuevo" className="nav-link">Nuevo Alumno</Link>
         </li>
         <li>
           <Link to="/acerca" className="nav-link">Acerca de</Link>
