@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 export default function ListaAlumnos() {
-  // Ejemplo de datos de alumnos (puedes reemplazarlo por datos reales o props)
+ 
   const alumnos = [
     {
       lu: "APU00999",
@@ -12,7 +12,7 @@ export default function ListaAlumnos() {
       domicilio: "Av. Congreso 125",
       telefono: "3884895999"
     }
-    // Puedes agregar más alumnos aquí
+
   ];
 
   return (

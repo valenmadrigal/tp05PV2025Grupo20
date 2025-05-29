@@ -1,6 +1,6 @@
 // src/components/Home.jsx
 import { Link } from 'react-router-dom';
-import  '../../css/home.css'; // Asegúrate de que la ruta sea correcta
+import  '../css/home.css'; // Asegúrate de que la ruta sea correcta
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       <footer className="home-footer">
-        <p>© {new Date().getFullYear()} Instituto Tecnológico - Versión 1.0</p>
+        <p>© {new Date().getFullYear()} Trabajo Practico N*5</p>
       </footer>
     </div>
   );
