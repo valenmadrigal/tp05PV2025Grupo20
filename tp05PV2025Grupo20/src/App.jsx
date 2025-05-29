@@ -6,13 +6,13 @@ import NuevoAlumno from './assets/components/NuevoAlumno';
 
 function App() {
   return (
-    <Router>
+    <Router> 
       <NavBar />
       <div className="container mt-3">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/alumnos" element={<ListaAlumnos />} /> {/* <-- agregado ahora mismo */}
-         <Route path="/alumnos/nuevo" element={<NuevoAlumno />} /> {/* <-- Cambiado */}
+          <Route path="/alumnos" element={<ListaAlumnos />} /> 
+         <Route path="/alumnos/nuevo" element={<NuevoAlumno />} /> 
         </Routes>
       </div>
     </Router>
