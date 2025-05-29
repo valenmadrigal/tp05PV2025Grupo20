@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import '../../css/NavBar.css';
-import logo from '../../css/logo.png'; // Importa el logo
+import '../css/NavBar.css';
+import logo from '../css/logo.png'; // Importa el logo
 
 export default function NavBar() {
   return (
