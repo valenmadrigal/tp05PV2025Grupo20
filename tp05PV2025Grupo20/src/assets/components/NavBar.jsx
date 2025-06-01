@@ -31,9 +31,9 @@ export default function NavBar() {
       {/* Añade la clase 'active' cuando el menú está abierto */}
       <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
         <li><Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
-        <li><Link to="/alumnos" className="nav-link" onClick={() => setMenuOpen(false)}>Alumnos</Link></li>
-        <li><Link to="/nuevo-alumno" className="nav-link" onClick={() => setMenuOpen(false)}>Nuevo Alumno</Link></li>
-        <li><Link to="/acerca" className="nav-link" onClick={() => setMenuOpen(false)}>Acerca de</Link></li>
+        <li><Link to="/ListaAlumnos" className="nav-link" onClick={() => setMenuOpen(false)}>Alumnos</Link></li>
+        <li><Link to="/NuevoAlumno" className="nav-link" onClick={() => setMenuOpen(false)}>Nuevo Alumno</Link></li>
+        <li><Link to="/Acerca" className="nav-link" onClick={() => setMenuOpen(false)}>Acerca de</Link></li>
       </ul>
     </nav>
   );
