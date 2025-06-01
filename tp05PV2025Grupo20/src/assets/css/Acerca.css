@@ -1,0 +1,64 @@
+/* Contenedor principal: centra el contenido y agrega fondo */
+.acerca-container {
+  display: flex; /* Para centrar horizontalmente */
+  justify-content: center; /* Centrado horizontal */
+  padding: 40px 20px; /* Espaciado interno arriba/abajo y a los lados */
+  background: linear-gradient(to right, #f2f2f2, #e6f7ff); /* Fondo degradado */
+  min-height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+/* Tarjeta que contiene todo el contenido */
+.acerca-card {
+  background-color: white; /* Fondo blanco para la tarjeta */
+  padding: 30px; /* Espaciado interno */
+  border-radius: 16px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para efecto de elevación */
+  max-width: 600px; /* Ancho máximo de la tarjeta */
+  width: 100%; /* Que se ajuste al ancho disponible */
+  font-family: 'Segoe UI', sans-serif; /* Tipografí*/
+  transition: transform 0.3s ease;
+  }
+.acerca-card:hover {
+  transform: translateY(-5px);
+}
+/* Contenedor general de la sección de integrantes */
+.integrantes-section {
+  margin-top: 40px;
+}
+
+/* Contenedor flexible para tarjetas en fila */
+.tarjetas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Estilo para cada tarjeta */
+.tarjeta-integrante {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-integrante:hover {
+  transform: translateY(-5px);
+}
+
+/* Nombre */
+.tarjeta-integrante h4 {
+  margin: 10px 0 5px;
+  color: #007acc;
+}
+
+/* Frase personal */
+.tarjeta-integrante blockquote {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 10px;
+}

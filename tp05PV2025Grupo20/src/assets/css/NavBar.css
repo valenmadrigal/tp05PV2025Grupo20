@@ -2,44 +2,19 @@
 
 /* Contenedor principal de la barra de navegación */
 .navbar {
-  background-color: #a6a0e9; /* Fondo blanco */
-  color: #0f0e0e; /* Color de texto predeterminado */
-  padding: 15px 25px; /* Espaciado interno */
-  display: flex;
-  justify-content: space-between; /* Espacio entre el logo y los enlaces/botón */
-  align-items: center; /* Centrar verticalmente */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Sombra suave */
-  font-family: 'Arial', sans-serif;
-  position: relative; /* Importante: Permite posicionar elementos hijos de forma absoluta */
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
-  border-radius: 20px;
+  background: linear-gradient(135deg, #8faffa, #a8a0ef); /* Degradado suave */
+  border-radius: 16px;
+  padding: 12px 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
-
 .navbar-logo span {
-  /* Tamaño y peso de la letra */
-  font-size: 1.8rem; /* Letras grandes */
-  font-weight: 700; /* Negrita para mayor impacto */
-
-  /* Color oscuro tenue */
-  color: #466b55; /* Un gris oscuro, casi negro pero más suave */
-
-  /* Sombreado rojizo */
-  text-shadow:
-    
-    -1px 1px 0 #cc0000,  /* Abajo-izquierda */
-    2px 2px 0 #cc0000;   /* Abajo-derecha */
-  /* El color #cc0000 es un rojo fuerte, puedes ajustar la intensidad */
-
-  /* Espaciado para que se vea más como un "botón" si lo deseas */
-  padding: 5px 10px;
-  
-  /* Borde redondeado */
-  border-radius: 8px; /* Ajusta el valor para más o menos redondeado */
-  
-  /* Transición para efectos hover si añades interactividad */
-  transition: all 0.3s ease;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3a3a3a;
+  text-shadow: 1px 1px 2px rgba(183, 39, 232, 0.5); 
+  padding: 4px 10px;
+  border-radius: 6px;
 }
-
 /* Opcional: Estilos al pasar el mouse por encima del logo completo */
 .navbar-logo:hover span {
   color: #000000; /* Un negro más puro al pasar el mouse */
@@ -65,7 +40,7 @@
 }
 
 .logo-image {
-  height: 40px; /* Tamaño del logo */
+  height: 60px; /* Tamaño del logo */
   margin-right: 10px; /* Espacio entre el logo y el texto */
 }
 
@@ -76,7 +51,7 @@
   padding: 0;
   display: flex; /* Mostrar enlaces en fila */
   gap: 25px; /* Espacio entre enlaces */
-  transition: all 0.3s ease; /* Transición general para suavizar cambios */
+  transition: max-height 0.3s ease-out, opacity 0.3s ease, padding 0.3s ease;
  border-radius: 20px;
 }
 
@@ -119,14 +94,8 @@ border-radius: 20px;}
   padding: 10px;
   z-index: 1001; /* Asegura que esté por encima del menú */
 }
-
 .hamburger-button div {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 5px 0;
-  transition: all 0.3s ease;
-  border-radius: 2px;
+  background-color: #5e4ae3;
 }
 
 /* Animación del botón de hamburguesa a "X" */
@@ -203,6 +172,10 @@ border-radius: 20px;}
     font-size: 1.1rem;
     padding: 5px 0; /* Ajusta el padding si es necesario */
   }
+.nav-link.active-link {
+  color: #007bff;
+  font-weight: bold;
+}
 
   .nav-link::after {
     display: none; /* Oculta el subrayado animado en móvil si no lo quieres */
