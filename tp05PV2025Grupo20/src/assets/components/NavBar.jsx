@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; // Importa useState
 import { Link } from 'react-router-dom';
 import '../css/NavBar.css';
-import logo from '../css/logo.png'; // Importa el logo
+import logo from '../img/logo.png'; // Importa el logo
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false); // Estado para controlar si el menú móvil está abierto

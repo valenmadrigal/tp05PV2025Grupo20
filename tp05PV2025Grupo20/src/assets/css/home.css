@@ -84,7 +84,7 @@
 /* Botón deshabilitado */
 .feature-button:disabled,
 .feature-button[disabled] {
-  background-color: #678598;
+  background-color: #2d6283;
   cursor: not-allowed;
   transform: none;
 }
