@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import '../css/NuevoAlumno.css'; // Asegúrate de tener este CSS para estilos
 
 export default function NuevoAlumno() {
   const [formData, setFormData] = useState({
