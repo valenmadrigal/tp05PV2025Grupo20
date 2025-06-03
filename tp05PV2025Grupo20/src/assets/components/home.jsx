@@ -1,6 +1,6 @@
 // src/components/Home.jsx
 import { Link } from 'react-router-dom';
-import  '../../css/home.css'; // Asegúrate de que la ruta sea correcta
+import  '../css/home.css'; // Asegúrate de que la ruta sea correcta
 
 export default function Home() {
   return (
@@ -14,13 +14,13 @@ export default function Home() {
         <div className="feature-card">
           <h2>Listado Completo</h2>
           <p>Visualiza y gestiona todos los alumnos registrados</p>
-          <Link to="/alumnos" className="feature-button">Ver Alumnos</Link>
+          <Link to="/ListaAlumnos" className="feature-button">Ver Alumnos</Link>
         </div>
 
         <div className="feature-card">
           <h2>Nuevo Registro</h2>
           <p>Agrega nuevos alumnos al sistema</p>
-          <Link to="/alumnos/nuevo" className="feature-button">Agregar Alumno</Link>
+          <Link to="/NuevoAlumno" className="feature-button">Agregar Alumno</Link>
         </div>
 
         <div className="feature-card">
@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       <footer className="home-footer">
-        <p>© {new Date().getFullYear()} Instituto Tecnológico - Versión 1.0</p>
+        <p>© {new Date().getFullYear()} Trabajo Practico N*5</p>
       </footer>
     </div>
   );

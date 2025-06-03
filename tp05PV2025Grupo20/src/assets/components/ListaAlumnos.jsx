@@ -1,52 +1,62 @@
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import{useEffect, useState} from 'react';
+import { Container, Table, Button } from 'react-bootstrap';
 
 export default function ListaAlumnos() {
-  // Ejemplo de datos de alumnos (puedes reemplazarlo por datos reales o props)
-  const [alumnos,setAlumnos] =useState([]);
+  const [alumnos, setAlumnos] = useState([]);
 
-  useEffect(()=>{
-const data =JSON.parse(localStorage.getItem('alumnos'))||[];
-setAlumnos(data);
+  useEffect(() => {
+    const datos = JSON.parse(localStorage.getItem('alumnos')) || [];
+    setAlumnos(datos);
   }, []);
 
-
+  const handleDelete = (id) => {
+    if (window.confirm(`¿Estás seguro de eliminar este alumno?`)) {
+      const nuevosAlumnos = alumnos.filter(a => a.id !== id);
+      setAlumnos(nuevosAlumnos);
+      localStorage.setItem('alumnos', JSON.stringify(nuevosAlumnos));
+    }
+  };
 
   return (
-    <div>
-      <h2>Lista de Alumnos</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>LU</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Curso</th>
-            <th>Email</th>
-            <th>Domicilio</th>
-            <th>Teléfono</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {alumnos.map((alumno, idx) => (
-            <tr key={idx}>
-              <td>{alumno.lu}</td>
-              <td>{alumno.nombre}</td>
-              <td>{alumno.apellido}</td>
-              <td>{alumno.curso}</td>
-              <td>{alumno.email}</td>
-              <td>{alumno.domicilio}</td>
-              <td>{alumno.telefono}</td>
-              <td>
-                <Link to={`/alumnos/${alumno.lu}`}>Ver</Link>{" | "}
-                <Link to={`/alumnos/${alumno.lu}/editar`}>Editar</Link>{" | "}
-                <button onClick={() => alert("Eliminar alumno")}>Eliminar</button>
-              </td>
+    <Container className="mt-5">
+      <h2 className="mb-4 text-center">Lista de Alumnos</h2>
+      {alumnos.length > 0 ? (
+        <Table striped bordered hover responsive className="shadow-sm">
+          <thead>
+            <tr>
+              <th>Nombre Completo</th>
+              <th>Acciones</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {alumnos.map((alumno) => (
+              <tr key={alumno.id}>
+                <td>{alumno.nombre} {alumno.apellido}</td>
+                <td className="d-flex gap-2 justify-content-center">
+                  <Link to={`/ListaAlumnos/${alumno.id}`} className="btn btn-sm btn-outline-info">Ver</Link>
+                    <Link
+                    to={`/ListaAlumnos/${alumno.id}/editar`} // <- ¡Aquí está el cambio!
+                    className="btn btn-sm btn-outline-warning"
+                  >
+                    Editar
+                  </Link>
+
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    onClick={() => handleDelete(alumno.id)}
+                  >
+                    Eliminar
+                  </Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      ) : (
+        <p className="text-center">No hay alumnos registrados aún.</p>
+      )}
+    </Container>
   );
 }

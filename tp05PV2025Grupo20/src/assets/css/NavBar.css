@@ -1,0 +1,198 @@
+/* --- NavBar.css --- */
+
+/* Contenedor principal de la barra de navegación */
+.navbar {
+  background: linear-gradient(135deg, #8faffa, #a8a0ef); /* Degradado suave */
+  border-radius: 16px;
+  padding: 12px 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+.navbar-logo span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3a3a3a;
+  text-shadow: 1px 1px 2px rgba(183, 39, 232, 0.5); 
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+/* Opcional: Estilos al pasar el mouse por encima del logo completo */
+.navbar-logo:hover span {
+  color: #000000; /* Un negro más puro al pasar el mouse */
+  text-shadow:
+    -1px -1px 0 #ff3333,
+    1px -1px 0 #ff3333,
+    -1px 1px 0 #ff3333,
+    1px 1px 0 #ff3333; /* Un rojo más brillante al pasar el mouse */
+}
+/* Estilos para el área del logo/marca */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.logo-image {
+  height: 60px; /* Tamaño del logo */
+  margin-right: 10px; /* Espacio entre el logo y el texto */
+}
+
+/* Estilos de los enlaces de navegación (escritorio) */
+.navbar-links {
+  list-style: none; /* Quitar viñetas de lista */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Mostrar enlaces en fila */
+  gap: 25px; /* Espacio entre enlaces */
+  transition: max-height 0.3s ease-out, opacity 0.3s ease, padding 0.3s ease;
+ border-radius: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #0c0c0c;
+  font-size: 1.1rem;
+  padding: 5px 0;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  position: relative;
+  border-radius: 20px;
+
+  font-family: 'Segoe UI', 'Poppins', sans-serif; /* redondeada y moderna */
+  font-style: italic; /* cursiva suave */
+  font-weight: 500; /* un poco más marcada que lo normal */
+  letter-spacing: 0.5px; /* opcional: más aire entre letras */
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007bff; /* Color del subrayado */
+  transition: width 0.3s ease;
+  border-radius: 20px;
+}
+
+.nav-link:hover {
+  color: #007bff; /* Color al pasar el mouse */
+}
+
+.nav-link:hover::after,
+.nav-link.active-link::after { /* Opcional: para el enlace activo de react-router-dom */
+  width: 100%;
+}
+
+/* --- Estilos del Botón de Hamburguesa --- */
+.hamburger-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  position: relative; /* Asegura que esté sobre otros elementos */
+}
+.hamburger-button div {
+  width: 25px;
+  height: 3px;
+  margin: 4px 0;
+  background-color: #ffffff; /* Blanco para contraste */
+  border-radius: 3px;
+  transition: 0.4s;
+}
+
+/* Animación del botón de hamburguesa a "X" */
+.hamburger-button.open .bar1 {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-button.open .bar2 {
+  opacity: 0;
+}
+
+.hamburger-button.open .bar3 {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- Media Queries para Responsividad (el "se achica la pantalla") --- */
+@media (max-width: 768px) { /* Este breakpoint determina cuándo aparece el menú de hamburguesa */
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  /* Oculta los enlaces en pantallas pequeñas por defecto */
+  .navbar-links {
+    display: flex; /* Mantenemos flex para la columna */
+    flex-direction: column; /* Apila los enlaces verticalmente */
+    position: absolute; /* Posiciona el menú de forma absoluta */
+    top: 100%; /* Coloca el menú justo debajo de la navbar */
+    right: 0; /* Alinea el menú a la derecha */
+    width: 200px; /* Ancho del menú desplegable */
+    background-color: #ffffff; /* Fondo para el menú desplegable */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
+    padding: 10px 0; /* Relleno interno del menú */
+    border-top: 1px solid #eee;
+    z-index: 999; /* Asegura que el menú esté por encima del contenido */
+
+    /* Animación de deslizamiento hacia abajo */
+    max-height: 0; /* Oculto por defecto */
+    overflow: hidden; /* Oculta el contenido que excede el max-height */
+    opacity: 0; /* Lo hacemos invisible */
+    pointer-events: none; /* No permite interacciones cuando está cerrado */
+    transition: max-height 0.0s 0.3s, opacity 0.3s ease, padding 0.3s ease; /* Retraso para max-height */
+  }
+
+  /* Cuando el menú está activo (abierto) */
+  .navbar-links.active {
+    max-height: 300px; /* Altura suficiente para mostrar todos los enlaces */
+    opacity: 1; /* Lo hacemos visible */
+    pointer-events: all; /* Permite interacciones */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease, padding 0.3s ease; /* Transición sin retraso */
+   background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con 80% de opacidad */
+    color: #ffffff; /* Cambia el color del texto de los enlaces a blanco */
+    /* Opcional: para un efecto de desenfoque detrás del menú (soporte de navegador variable) */
+    /* backdrop-filter: blur(5px); */
+  }
+    /* Asegúrate de que los enlaces dentro del menú también sean visibles con el fondo oscuro */
+  .navbar-links.active .nav-link {
+    color: #ffffff; /* Color del texto del enlace en blanco */
+  }
+
+  .navbar-links.active .nav-link:hover {
+    color: #007bff; /* Color del enlace al pasar el mouse */
+  }
+
+
+  .navbar-links li {
+    width: 100%;
+    text-align: right; /* Alinea los enlaces a la derecha */
+    padding: 8px 20px; /* Relleno para cada elemento de la lista */
+  }
+
+  .nav-link {
+    display: block; /* Para que el padding ocupe todo el ancho del li */
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 5px 0; /* Ajusta el padding si es necesario */
+  }
+.nav-link.active-link {
+  color: #007bff;
+  font-weight: bold;
+}
+
+  .nav-link::after {
+    display: none; /* Oculta el subrayado animado en móvil si no lo quieres */
+  }
+
+  .hamburger-button {
+    display: block; /* Muestra el botón de hamburguesa en móvil */
+  }
+}

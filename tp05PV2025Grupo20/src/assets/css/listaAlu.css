@@ -1,0 +1,48 @@
+
+.card-flip-container {
+  perspective: 1000px; /* Define la perspectiva 3D para el efecto de volteo */
+  height: 100%; /* Asegura que ocupe toda la altura disponible */
+  cursor: pointer; /* Indica que es clicable */
+}
+
+.card-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s; /* Transición suave para el volteo */
+  transform-style: preserve-3d; /* Permite la rotación 3D de los hijos */
+}
+
+.card-flip-container.flipped .card-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.card-flip-front,
+.card-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 0.375rem; /* Hereda el border-radius de Bootstrap cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  padding: 1rem; /* Espaciado interno */
+}
+
+.card-flip-back {
+  transform: rotateY(180deg); /* Rota la parte trasera para que esté lista para mostrarse */
+}
+
+.card-flip-back .card-body {
+  width: 100%;
+  padding: 1rem;
+}
+
+.card-flip-back .list-group-item {
+  text-align: left; /* Alinea el texto de la lista a la izquierda */
+  font-size: 0.9em; /* Reduce el tamaño de fuente para la lista */
+}
