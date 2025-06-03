@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Card, Button, Container } from 'react-bootstrap';
-
+//.
 export default function DetallesAlu() {
   const { id } = useParams();
   const [alumno, setAlumno] = useState(null);
