@@ -61,9 +61,14 @@
   font-size: 1.1rem;
   padding: 5px 0;
   transition: color 0.3s ease, border-bottom 0.3s ease;
-  position: relative; /* Para el efecto de subrayado */
-border-radius: 20px;}
+  position: relative;
+  border-radius: 20px;
 
+  font-family: 'Segoe UI', 'Poppins', sans-serif; /* redondeada y moderna */
+  font-style: italic; /* cursiva suave */
+  font-weight: 500; /* un poco más marcada que lo normal */
+  letter-spacing: 0.5px; /* opcional: más aire entre letras */
+}
 .nav-link::after {
   content: '';
   position: absolute;
@@ -87,15 +92,21 @@ border-radius: 20px;}
 
 /* --- Estilos del Botón de Hamburguesa --- */
 .hamburger-button {
-  display: none; /* Oculto por defecto en pantallas grandes */
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1001; /* Asegura que esté por encima del menú */
+  z-index: 1001;
+  position: relative; /* Asegura que esté sobre otros elementos */
 }
 .hamburger-button div {
-  background-color: #5e4ae3;
+  width: 25px;
+  height: 3px;
+  margin: 4px 0;
+  background-color: #ffffff; /* Blanco para contraste */
+  border-radius: 3px;
+  transition: 0.4s;
 }
 
 /* Animación del botón de hamburguesa a "X" */

@@ -5,6 +5,8 @@ import ListaAlumnos from './assets/components/ListaAlumnos'; //estoy viendo  com
 import NuevoAlumno from './assets/components/NuevoAlumno';
 import Acerca from './assets/components/Acerca';
 import DetallesAlu from './assets/components/DetallesAlu';
+import EditarAlu from './assets/components/EditarAlu';
+
 function App() {
   return (
     <Router> 
@@ -16,6 +18,8 @@ function App() {
          <Route path="/NuevoAlumno" element={<NuevoAlumno />} /> 
        <Route path="/ListaAlumnos/:id" element={<DetallesAlu />} />
           <Route path="/Acerca" element={<Acerca />} />
+           <Route path="/ListaAlumnos/:id/editar" element={<EditarAlu />} /> {/* <- ¡Aquí está el cambio! */}
+       
         </Routes>
       </div>
     </Router>

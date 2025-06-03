@@ -14,13 +14,13 @@ export default function Home() {
         <div className="feature-card">
           <h2>Listado Completo</h2>
           <p>Visualiza y gestiona todos los alumnos registrados</p>
-          <Link to="/alumnos" className="feature-button">Ver Alumnos</Link>
+          <Link to="/ListaAlumnos" className="feature-button">Ver Alumnos</Link>
         </div>
 
         <div className="feature-card">
           <h2>Nuevo Registro</h2>
           <p>Agrega nuevos alumnos al sistema</p>
-          <Link to="/alumnos/nuevo" className="feature-button">Agregar Alumno</Link>
+          <Link to="/NuevoAlumno" className="feature-button">Agregar Alumno</Link>
         </div>
 
         <div className="feature-card">

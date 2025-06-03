@@ -35,6 +35,13 @@ export default function ListaAlumnos() {
                 <td>{alumno.nombre} {alumno.apellido}</td>
                 <td className="d-flex gap-2 justify-content-center">
                   <Link to={`/ListaAlumnos/${alumno.id}`} className="btn btn-sm btn-outline-info">Ver</Link>
+                    <Link
+                    to={`/ListaAlumnos/${alumno.id}/editar`} // <- ¡Aquí está el cambio!
+                    className="btn btn-sm btn-outline-warning"
+                  >
+                    Editar
+                  </Link>
+
                   <Button
                     variant="outline-danger"
                     size="sm"
