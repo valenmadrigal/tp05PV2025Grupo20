@@ -12,7 +12,8 @@ export default function NuevoAlumno() {
     domicilio: '',
     telefono: ''
   });
-
+      
+  const [aceptaTerminos, setAceptaTerminos] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -53,7 +54,17 @@ export default function NuevoAlumno() {
                 />
               </Form.Group>
             ))}
-            <Button variant="primary" type="submit" className="w-100 mt-3">
+                     <Form.Check 
+                     type="checkbox"
+                    className="mb-3"
+                    id="datosConfirmados"
+                   label="Confirmo que los datos ingresados son correctos"
+                   checked={aceptaTerminos}
+                  onChange={(e) => setAceptaTerminos(e.target.checked)}
+                  />
+                   
+           
+            <Button variant="primary" type="submit" className="w-100 mt-3" disabled={!aceptaTerminos}>
               Guardar
             </Button>
           </Form>

@@ -3,8 +3,8 @@
 /* Contenedor principal de la barra de navegación */
 .navbar {
   background: linear-gradient(135deg, #8faffa, #a8a0ef); /* Degradado suave */
-  border-radius: 16px;
   padding: 12px 24px;
+ display: flex;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 .navbar-logo span {
