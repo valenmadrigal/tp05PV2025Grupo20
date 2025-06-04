@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       <footer className="home-footer">
-        <p>© {new Date().getFullYear()} Trabajo Practico N*5</p>
+        <p>© {new Date().getFullYear()} Trabajo Practico N*5 </p>
       </footer>
     </div>
   );
